@@ -40,6 +40,9 @@ class DemoRestApiItem(APIView):
     def put(self, request, item_id):
         data = request.data
 
+        if 'id' not in data or data['id'] != item_id:
+            return Response({'error': 'ID faltante o no coincide con el de la URL.'}, status=status.HTTP_400_BAD_REQUEST)
+
         for index, item in enumerate(data_list):
             if item['id'] == item_id:
                 updated = {
@@ -70,3 +73,4 @@ class DemoRestApiItem(APIView):
                 return Response({'message': 'Elemento eliminado lógicamente.'}, status=status.HTTP_200_OK)
 
         return Response({'error': 'Elemento no encontrado.'}, status=status.HTTP_404_NOT_FOUND)
+    
