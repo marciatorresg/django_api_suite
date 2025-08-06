@@ -11,9 +11,9 @@ import uuid
 data_list = []
 
 # Añadiendo algunos datos de ejemplo para probar el GET
-data_list.append({'id': str(uuid.uuid4()), 'name': 'User01', 'email': 'user01@example.com', 'is_active': True})
-data_list.append({'id': str(uuid.uuid4()), 'name': 'User02', 'email': 'user02@example.com', 'is_active': True})
-data_list.append({'id': str(uuid.uuid4()), 'name': 'User03', 'email': 'user03@example.com', 'is_active': False}) # Ejemplo de item inactivo
+data_list.append({'id': str(uuid.uuid4()), 'name': 'Djpp', 'email': 'darwinpachecoparedes@gmail.com', 'is_active': True})
+data_list.append({'id': str(uuid.uuid4()), 'name': 'User', 'email': 'user@example.com', 'is_active': True})
+data_list.append({'id': str(uuid.uuid4()), 'name': 'Alex', 'email': 'alex@gmail.com', 'is_active': False}) # Ejemplo de item inactivo
 
 class DemoRestApi(APIView):
     name = "Demo REST API"
@@ -45,7 +45,6 @@ class DemoRestApiItem(APIView):
 
         for index, item in enumerate(data_list):
             if item['id'] == item_id:
-                # Reemplazar completamente excepto el id
                 updated = {
                     'id': item_id,
                     'name': data.get('name', ''),
@@ -74,3 +73,4 @@ class DemoRestApiItem(APIView):
                 return Response({'message': 'Elemento eliminado lógicamente.'}, status=status.HTTP_200_OK)
 
         return Response({'error': 'Elemento no encontrado.'}, status=status.HTTP_404_NOT_FOUND)
+    
