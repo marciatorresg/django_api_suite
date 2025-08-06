@@ -29,7 +29,9 @@ SECRET_KEY = "django-insecure-ozr-gm64u%(pe7hta1kx07+5*a124symx&o(e*ic31gz1!71fj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mtorresg.pythonanywhere.com']
+ALLOWED_HOSTS = ['mtorresg.pythonanywhere.com',
+    '127.0.0.1',
+    'localhost',]
 
 
 # Application definition
