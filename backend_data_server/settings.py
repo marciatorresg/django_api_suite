@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-ozr-gm64u%(pe7hta1kx07+5*a124symx&o(e*ic31gz1!71fj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mtorresg.pythonanywhere.com']
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "demo_rest_api",
     "homepage",
-    
+
 ]
 
 MIDDLEWARE = [
@@ -124,6 +124,8 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, STATIC_URL),
 ]
+
+STATIC_ROOT = "assets/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
